@@ -11,13 +11,9 @@ logger = logging.getLogger(__name__)
 
 # Initialize FastAPI app
 app = FastAPI(
-    title="AI Text Summarizer API by Jatin Jangid",
-    description="A powerful text summarization API using Hugging Face Transformers. Created by Jatin Jangid to make advanced AI accessible to everyone.",
-    version="1.0.0",
-    contact={
-        "name": "Jatin Jangid",
-        "url": "https://github.com/jatin123123/Live_translator",
-    }
+    title="Text Summarizer API",
+    description="A powerful text summarization API using Hugging Face Transformers",
+    version="1.0.0"
 )
 
 # Add CORS middleware to allow frontend connections
@@ -84,15 +80,12 @@ async def startup_event():
 async def root():
     """Root endpoint with API information."""
     return {
-        "message": "AI Text Summarizer API by Jatin Jangid",
-        "description": "Transform lengthy documents into concise summaries using advanced AI",
-        "creator": "Jatin Jangid",
+        "message": "Text Summarizer API",
         "version": "1.0.0",
-        "github": "https://github.com/jatin123123/Live_translator",
         "endpoints": {
-            "POST /summarize": "Summarize text using AI",
+            "POST /summarize": "Summarize text",
             "GET /health": "Check API health and model status",
-            "GET /docs": "Interactive API documentation"
+            "GET /docs": "API documentation"
         }
     }
 
@@ -213,15 +206,11 @@ async def general_exception_handler(request, exc):
     }
 
 if __name__ == "__main__":
-    import os
-    # Get port from environment variable for Heroku deployment
-    port = int(os.environ.get("PORT", 8000))
-    
     # Run the application
     uvicorn.run(
         "app:app",
         host="0.0.0.0",
-        port=port,
-        reload=False,  # Set to False for production
+        port=8000,
+        reload=True,  # Set to False in production
         log_level="info"
     )

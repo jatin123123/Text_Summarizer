@@ -1,20 +1,20 @@
 # FastAPI Backend Dependencies
 fastapi==0.104.1
-uvicorn==0.24.0
+uvicorn[standard]==0.24.0
 pydantic==2.5.0
 
-# Lightweight ML Dependencies for Heroku
+# Deep Learning Dependencies
 torch==2.1.0
 transformers==4.36.0
 tokenizers==0.15.0
 
-# Streamlit Frontend Dependencies  
+# Streamlit Frontend Dependencies
 streamlit==1.28.1
 
-# HTTP Client
+# HTTP Client for Frontend-Backend Communication
 httpx==0.25.2
 requests==2.31.0
 
-# Utilities
+# Additional Utilities
 python-multipart==0.0.6
-gunicorn==21.2.0
+aiofiles==23.2.0

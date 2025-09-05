@@ -1,12 +1,6 @@
-# AI Text Summarizer by Jatin Jangid
+# Text Summarizer Project
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-A complete text summarization application built with **FastAPI**, **Hugging Face Transformers**, and **Streamlit** by **Jatin Jangid**.
-
-## 🌟 Created by Jatin Jangid
-
-This project represents my passion for making advanced AI technology accessible to everyone. As an AI/ML enthusiast, I've designed this application to transform how people interact with large amounts of text.
+A complete text summarization application built with **FastAPI**, **Hugging Face Transformers**, and **Streamlit**.
 
 ## 🚀 Features
 

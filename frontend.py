@@ -14,8 +14,7 @@ st.set_page_config(
 )
 
 # Constants
-import os
-BACKEND_URL = os.environ.get("BACKEND_URL", "http://localhost:8000")
+BACKEND_URL = "http://localhost:8000"
 MAX_TEXT_LENGTH = 50000  # Character limit for input text
 
 st.markdown("""
@@ -405,12 +404,7 @@ def main():
     st.divider()
     st.markdown("""
     <div style="text-align: center; color: #666; margin-top: 2rem;">
-        <p>🤖 AI Text Summarizer by <strong>Jatin Jangid</strong> | Powered by Hugging Face Transformers</p>
-        <p>💻 Built with FastAPI & Streamlit | <em>Making AI accessible to everyone</em></p>
-        <p style="font-size: 0.8rem; margin-top: 1rem;">
-            🚀 <a href="https://github.com/jatin123123/Live_translator" target="_blank">View Source Code</a> | 
-            📧 Contact: <strong>Jatin Jangid</strong>
-        </p>
+        <p>🤖 Powered by Jatin Jangid </p>
         <p><em>Tip: For best results, use well-structured text with clear paragraphs.</em></p>
     </div>
     """, unsafe_allow_html=True)
