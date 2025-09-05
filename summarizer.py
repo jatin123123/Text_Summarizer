@@ -20,11 +20,17 @@ class TextSummarizer:
         Args:
             model_name (str): The name of the pre-trained model to use
         """
-        self.model_name = model_name
+        # Use smaller model for Heroku deployment to save memory
+        import os
+        if os.environ.get("DYNO"):  # Running on Heroku
+            self.model_name = "t5-small"  # Smaller model for Heroku
+        else:
+            self.model_name = model_name
+            
         self.tokenizer = None
         self.model = None
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.max_chunk_length = 1024  # Maximum tokens per chunk
+        self.max_chunk_length = 512 if os.environ.get("DYNO") else 1024  # Smaller chunks for Heroku
         self.load_model()
     
     def load_model(self):
