@@ -3,14 +3,12 @@
 __pycache__/
 .git/
 .gitignore
-*.md
-!README.md
+README.md
+DEPLOYMENT.md
+HEROKU_GUIDE.md
 .vscode/
 .DS_Store
 *.log
 tests/
 docs/
 examples/
-*.txt
-!requirements.txt
-!.python-version
