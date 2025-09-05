@@ -20,16 +20,16 @@ class TextSummarizer:
         Args:
             model_name (str): The name of the pre-trained model to use
         """
-        # Use smaller model for Heroku deployment to save memory
+        # Use much smaller model for Heroku deployment to save memory and space
         import os
         if os.environ.get("DYNO"):  # Running on Heroku
-            self.model_name = "t5-small"  # Smaller model for Heroku
+            self.model_name = "sshleifer/distilbart-cnn-12-6"  # Smaller distilled BART model
         else:
             self.model_name = model_name
             
         self.tokenizer = None
         self.model = None
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cpu")  # Force CPU on Heroku
         self.max_chunk_length = 512 if os.environ.get("DYNO") else 1024  # Smaller chunks for Heroku
         self.load_model()
     

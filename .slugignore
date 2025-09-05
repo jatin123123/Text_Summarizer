@@ -1,0 +1,16 @@
+# Exclude unnecessary files to reduce slug size
+*.pyc
+__pycache__/
+.git/
+.gitignore
+*.md
+!README.md
+.vscode/
+.DS_Store
+*.log
+tests/
+docs/
+examples/
+*.txt
+!requirements.txt
+!.python-version
